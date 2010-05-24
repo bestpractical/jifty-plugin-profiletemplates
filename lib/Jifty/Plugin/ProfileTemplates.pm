@@ -44,7 +44,6 @@ sub inspect_after_request {
 
     my $ret = $stack[0];
     $ret->{time} += $_->{time} for @{$ret->{kids}};
-    warn YAML::Dump($ret);
 
     @stack = ();
     return $ret;
